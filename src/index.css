@@ -70,3 +70,11 @@ button:focus-visible {
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.downvote-btn:hover {
+  color: purple;
+}
+
+.upvote-btn:hover {
+  color: purple;
+}
