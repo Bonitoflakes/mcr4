@@ -36,23 +36,16 @@ export const Home = () => {
 };
 
 export const Post = () => {
-  const { tweetId } = useParams();
   const navigate = useNavigate();
-  const [post, setPost] = useState({});
+  const { tweetId } = useParams();
   const { state } = useForum();
 
-  useEffect(() => {
-    const getSinglePost = (id) => {
-      const post = state.posts.find(({ postId }) => postId === id);
-      return post;
-    };
+  const getSinglePost = (id) => {
+    const post = state.posts.find(({ postId }) => postId === id);
+    return post;
+  };
 
-    const data = getSinglePost(tweetId);
-    console.log(data, "data");
-    setPost(data);
-  }, []);
-
-  console.log(tweetId);
+  const data = getSinglePost(tweetId);
 
   return (
     <div>
@@ -62,7 +55,8 @@ export const Post = () => {
         </button>
         <h1 className="text-5xl font-bold text-purple-950">Post</h1>
       </div>
-      {/* <Tweet post={post} showComments /> */}
+
+      <Tweet post={data} showComments />
     </div>
   );
 };

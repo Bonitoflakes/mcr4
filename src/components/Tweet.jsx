@@ -27,9 +27,9 @@ export const Tweet = (props) => {
     comments,
   } = props.post;
 
-  console.log(tags, "tags");
-  console.log(comments, "comments");
-  console.table(props);
+//   console.log(tags, "tags");
+//   console.log(comments, "comments");
+//   console.table(props);
 
   const votesCount = upvotes - downvotes;
   const { dispatch } = useForum();
